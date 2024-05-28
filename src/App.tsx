@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -12,6 +12,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MotionDiv from "./components/MotionDiv";
+import Management from "./components/profile/Management";
+import Vehicles from "./components/profile/Vehicles";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
@@ -22,8 +24,20 @@ import NotFound from "./pages/NotFound";
 
 const AppRoutes: React.FC = () => {
 	const location = useLocation();
-	const { isAuthenticated } = React.useContext(AuthContext);
+	const [isAuthChecked, setIsAuthChecked] = useState(false);
+	const { isAuthenticated } = useContext(AuthContext);
 
+	useEffect(() => {
+		const checkAuth = async () => {
+			await new Promise((resolve) => setTimeout(resolve, 500));
+			setIsAuthChecked(true);
+		};
+		checkAuth();
+	}, []);
+
+	if (!isAuthChecked) {
+		return null;
+	}
 	return (
 		<AnimatePresence mode="wait">
 			<Routes location={location} key={location.pathname}>
@@ -38,13 +52,16 @@ const AppRoutes: React.FC = () => {
 				<Route
 					path="/profile"
 					element={
-						<ProtectedRoute>
+						<ProtectedRoute isAuthenticated={isAuthenticated}>
 							<MotionDiv>
 								<Profile />
 							</MotionDiv>
 						</ProtectedRoute>
 					}
-				/>
+				>
+					<Route index element={<Management />} />
+					<Route path="vehicles" element={<Vehicles />} />
+				</Route>
 				<Route
 					path="/login"
 					element={

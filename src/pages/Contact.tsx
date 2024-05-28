@@ -30,9 +30,7 @@ const Contact: React.FC = () => {
 				<div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
 					<div>
 						<h3 className="text-lg leading-6 font-medium text-gray-900 flex items-center">
-							<svg className="h-6 w-6 mr-2">
-								{/* Icône SVG personnalisée pour le support client */}
-							</svg>
+							<svg className="h-6 w-6 mr-2"></svg>
 							Support client
 						</h3>
 						<dl className="mt-2 text-base text-gray-500">
@@ -41,10 +39,10 @@ const Contact: React.FC = () => {
 								<dd className="flex items-center">
 									<span className="mr-2">📧</span>
 									<a
-										href="mailto:support@monapplication.com"
+										href="mailto:support@GoCar.com"
 										className="transition duration-300 ease-in-out hover:text-blue-500"
 									>
-										support@monapplication.com
+										support@gocar.com
 									</a>
 								</dd>
 							</div>
@@ -65,9 +63,7 @@ const Contact: React.FC = () => {
 
 					<div>
 						<h3 className="text-lg leading-6 font-medium text-gray-900 flex items-center">
-							<svg className="h-6 w-6 mr-2">
-								{/* Icône SVG personnalisée pour les partenariats */}
-							</svg>
+							<svg className="h-6 w-6 mr-2"></svg>
 							Partenariats
 						</h3>
 						<dl className="mt-2 text-base text-gray-500">
@@ -76,10 +72,10 @@ const Contact: React.FC = () => {
 								<dd className="flex items-center">
 									<span className="mr-2">📧</span>
 									<a
-										href="mailto:partenariats@monapplication.com"
+										href="mailto:partenariats@GoCar.com"
 										className="transition duration-300 ease-in-out hover:text-blue-500"
 									>
-										partenariats@monapplication.com
+										partenariats@gocar.com
 									</a>
 								</dd>
 							</div>
@@ -100,9 +96,7 @@ const Contact: React.FC = () => {
 
 					<div>
 						<h3 className="text-lg leading-6 font-medium text-gray-900 flex items-center">
-							<svg className="h-6 w-6 mr-2">
-								{/* Icône SVG personnalisée pour la presse */}
-							</svg>
+							<svg className="h-6 w-6 mr-2"></svg>
 							Presse
 						</h3>
 						<dl className="mt-2 text-base text-gray-500">
@@ -111,10 +105,10 @@ const Contact: React.FC = () => {
 								<dd className="flex items-center">
 									<span className="mr-2">📧</span>
 									<a
-										href="mailto:presse@monapplication.com"
+										href="mailto:presse@GoCar.com"
 										className="transition duration-300 ease-in-out hover:text-blue-500"
 									>
-										presse@monapplication.com
+										presse@gocar.com
 									</a>
 								</dd>
 							</div>
@@ -135,9 +129,7 @@ const Contact: React.FC = () => {
 
 					<div>
 						<h3 className="text-lg leading-6 font-medium text-gray-900 flex items-center">
-							<svg className="h-6 w-6 mr-2">
-								{/* Icône SVG personnalisée pour le siège social */}
-							</svg>
+							<svg className="h-6 w-6 mr-2"></svg>
 							Siège social
 						</h3>
 						<address className="mt-2 not-italic text-base text-gray-500">

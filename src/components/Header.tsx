@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { Button } from "primereact/button";
+import "primereact/resources/themes/saga-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 import logoImage from "/logo.png";
 
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
 	const { isAuthenticated, logout } = useContext(AuthContext);
 
 	return (
@@ -18,32 +22,36 @@ const Navbar: React.FC = () => {
 					<div className="flex items-center">
 						{isAuthenticated ? (
 							<>
-								<Link
-									to="/profile"
-									className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-blue-500"
-								>
-									Mon Profile
+								<Link to="/profile">
+									<Button
+										label="Mon Profil"
+										icon="pi pi-user"
+										className="p-button-text p-button-rounded p-button-plain mr-2"
+									/>
 								</Link>
-								<button
+								<Button
+									label="Déconnexion"
+									icon="pi pi-sign-out"
+									className="p-button-text p-button-rounded p-button-plain"
 									onClick={logout}
-									className="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-blue-500"
-								>
-									Déconnexion
-								</button>
+								/>
 							</>
 						) : (
 							<>
-								<Link
-									to="/login"
-									className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-blue-500"
-								>
-									Connexion
+								<Link to="/login">
+									<Button
+										label="Connexion"
+										icon="pi pi-sign-in"
+										className="p-button-text p-button-rounded p-button-plain mr-2"
+									/>
 								</Link>
-								<Link
-									to="/register"
-									className="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-blue-500"
-								>
-									Inscription
+
+								<Link to="/register">
+									<Button
+										label="Inscription"
+										icon="pi pi-user-plus"
+										className="p-button-rounded p-button-primary"
+									/>
 								</Link>
 							</>
 						)}
@@ -54,4 +62,4 @@ const Navbar: React.FC = () => {
 	);
 };
 
-export default Navbar;
+export default Header;

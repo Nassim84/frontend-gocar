@@ -1,3 +1,31 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.active {
+	font-weight: bold;
+	border-left: 4px solid #3498db;
+	padding-left: 16px;
+}
+
+@keyframes gradientText {
+	0% {
+		color: #ff7e5f;
+	}
+	25% {
+		color: #feb47b;
+	}
+	50% {
+		color: #86a8e7;
+	}
+	75% {
+		color: #91eae4;
+	}
+	100% {
+		color: #ff7e5f;
+	}
+}
+
+.animate-gradient-text {
+	animation: gradientText 5s infinite;
+}

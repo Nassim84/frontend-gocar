@@ -12,9 +12,9 @@ const About: React.FC = () => {
 						Nous révolutionnons le monde, un trajet à la fois
 					</p>
 					<p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-						Chez Mon Application, nous croyons en la puissance de la technologie
-						pour transformer la façon dont les gens se déplacent. Notre mission
-						est de rendre les voyages plus faciles, plus abordables et plus
+						Chez GoCar, nous croyons en la puissance de la technologie pour
+						transformer la façon dont les gens se déplacent. Notre mission est
+						de rendre les voyages plus faciles, plus abordables et plus
 						agréables pour tous.
 					</p>
 				</div>
@@ -45,12 +45,12 @@ const About: React.FC = () => {
 								</p>
 							</dt>
 							<dd className="mt-2 ml-16 text-base text-gray-500">
-								Mon Application a été fondée en 2010 par un groupe d'amis
-								passionnés de voyage et de technologie. Tout a commencé lors
-								d'un road trip mémorable où ils ont réalisé à quel point il
-								était difficile de trouver des covoiturages fiables et
-								abordables. Ils ont décidé de créer une plateforme qui rendrait
-								le covoiturage accessible à tous, partout dans le monde.
+								GoCar a été fondée en 2010 par un groupe d'amis passionnés de
+								voyage et de technologie. Tout a commencé lors d'un road trip
+								mémorable où ils ont réalisé à quel point il était difficile de
+								trouver des covoiturages fiables et abordables. Ils ont décidé
+								de créer une plateforme qui rendrait le covoiturage accessible à
+								tous, partout dans le monde.
 								<br />
 								<br />
 								Depuis lors, nous avons connu une croissance exceptionnelle.
@@ -85,14 +85,13 @@ const About: React.FC = () => {
 								</p>
 							</dt>
 							<dd className="mt-2 ml-16 text-base text-gray-500">
-								Chez Mon Application, nos valeurs guident tout ce que nous
-								faisons. Nous croyons en :
+								Chez GoCar, nos valeurs guident tout ce que nous faisons. Nous
+								croyons en :
 								<br />
 								<br />
 								<strong>La simplicité</strong> : Nous rendons le covoiturage
-								facile et accessible à tous. Notre application est intuitive et
-								conviviale, pour que vous puissiez trouver un trajet en quelques
-								clics.
+								facile et accessible à tous. GoCar est intuitive et conviviale,
+								pour que vous puissiez trouver un trajet en quelques clics.
 								<br />
 								<br />
 								<strong>La sécurité</strong> : Votre sécurité est notre priorité
@@ -106,10 +105,10 @@ const About: React.FC = () => {
 								toujours là pour vous aider, 24h/24 et 7j/7.
 								<br />
 								<br />
-								<strong>La communauté</strong> : Chez Mon Application, vous
-								faites partie d'une communauté mondiale de voyageurs. Nous
-								encourageons les interactions et le partage d'expériences pour
-								rendre chaque trajet unique et mémorable.
+								<strong>La communauté</strong> : Chez GoCar, vous faites partie
+								d'une communauté mondiale de voyageurs. Nous encourageons les
+								interactions et le partage d'expériences pour rendre chaque
+								trajet unique et mémorable.
 							</dd>
 						</div>
 					</dl>
