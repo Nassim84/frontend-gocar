@@ -60,7 +60,7 @@ const AppRoutes: React.FC = () => {
 					}
 				>
 					<Route index element={<Management />} />
-					<Route path="vehicles" element={<Vehicles />} />
+					<Route path="vehicles/*" element={<Vehicles />} />
 				</Route>
 				<Route
 					path="/login"
