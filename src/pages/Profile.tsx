@@ -17,7 +17,7 @@ const Profile: React.FC = () => {
 					<Button
 						label="Management"
 						icon="pi pi-briefcase"
-						className="p-button-text p-button-plain w-full justify-start"
+						className="p-button-text p-button-plain w-full justify-start py-7 text-lg"
 					/>
 				</Link>
 				<Link
@@ -29,7 +29,7 @@ const Profile: React.FC = () => {
 					<Button
 						label="Vehicles"
 						icon="pi pi-car"
-						className="p-button-text p-button-plain w-full justify-start"
+						className="p-button-text p-button-plain w-full justify-start py-7 text-lg"
 					/>
 				</Link>
 			</nav>

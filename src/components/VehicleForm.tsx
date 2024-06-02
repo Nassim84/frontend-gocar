@@ -48,64 +48,82 @@ const VehicleForm: React.FC<VehicleFormProps> = ({ vehicle, onSubmit }) => {
 	};
 
 	return (
-		<Card className="p-4 shadow-md">
-			<h2 className="text-2xl font-bold mb-4">
-				{vehicle ? "Modifier le véhicule" : "Ajouter un véhicule"}
-			</h2>
-			<form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
-				<div>
-					<label htmlFor="brand" className="block font-bold mb-2">
-						Marque
-					</label>
-					<InputText
-						id="brand"
-						value={brand}
-						onChange={(e) => setBrand(e.target.value)}
-						className="w-full"
-					/>
-				</div>
-				<div>
-					<label htmlFor="model" className="block font-bold mb-2">
-						Modèle
-					</label>
-					<InputText
-						id="model"
-						value={model}
-						onChange={(e) => setModel(e.target.value)}
-						className="w-full"
-					/>
-				</div>
-				<div>
-					<label htmlFor="color" className="block font-bold mb-2">
-						Couleur
-					</label>
-					<InputText
-						id="color"
-						value={color}
-						onChange={(e) => setColor(e.target.value)}
-						className="w-full"
-					/>
-				</div>
-				<div>
-					<label htmlFor="numberOfSeats" className="block font-bold mb-2">
-						Nombre de sièges
-					</label>
-					<InputNumber
-						id="numberOfSeats"
-						value={numberOfSeats}
-						onValueChange={(e) => setNumberOfSeats(e.value ?? 0)}
-						className="w-full"
-					/>
-				</div>
-				<div className="col-span-2">
-					<Button
-						type="submit"
-						label={vehicle ? "Modifier le véhicule" : "Ajouter le véhicule"}
-						className="w-full"
-					/>
-				</div>
-			</form>
-		</Card>
+		<div className="flex justify-center items-center min-h-screen bg-gray-50">
+			<Card className=" p-8 shadow-xl bg-white rounded-lg transition-transform transform hover:scale-105">
+				<h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">
+					{vehicle ? "Modifier le véhicule" : "Ajouter un véhicule"}
+				</h2>
+				<form onSubmit={handleSubmit} className="space-y-6">
+					<div>
+						<label
+							htmlFor="brand"
+							className="block font-semibold mb-2 text-gray-700"
+						>
+							Marque
+						</label>
+						<InputText
+							id="brand"
+							value={brand}
+							onChange={(e) => setBrand(e.target.value)}
+							className="w-full border-2 border-gray-300 p-3 rounded-md focus:outline-none focus:border-indigo-500"
+							required
+						/>
+					</div>
+					<div>
+						<label
+							htmlFor="model"
+							className="block font-semibold mb-2 text-gray-700"
+						>
+							Modèle
+						</label>
+						<InputText
+							id="model"
+							value={model}
+							onChange={(e) => setModel(e.target.value)}
+							className="w-full border-2 border-gray-300 p-3 rounded-md focus:outline-none focus:border-indigo-500"
+							required
+						/>
+					</div>
+					<div>
+						<label
+							htmlFor="color"
+							className="block font-semibold mb-2 text-gray-700"
+						>
+							Couleur
+						</label>
+						<InputText
+							id="color"
+							value={color}
+							onChange={(e) => setColor(e.target.value)}
+							className="w-full border-2 border-gray-300 p-3 rounded-md focus:outline-none focus:border-indigo-500"
+							required
+						/>
+					</div>
+					<div>
+						<label
+							htmlFor="numberOfSeats"
+							className="block font-semibold mb-2 text-gray-700"
+						>
+							Nombre de sièges
+						</label>
+						<InputNumber
+							id="numberOfSeats"
+							value={numberOfSeats}
+							onValueChange={(e) => setNumberOfSeats(e.value ?? 0)}
+							className="w-full border-2 border-gray-300 p-3 rounded-md focus:outline-none focus:border-indigo-500"
+							required
+						/>
+					</div>
+					<div>
+						<Button
+							type="submit"
+							label={vehicle ? "Modifier le véhicule" : "Ajouter le véhicule"}
+							className="w-full bg-indigo-600 text-white font-semibold py-3 rounded-md hover:bg-indigo-700 transition duration-300"
+						/>
+					</div>
+				</form>
+			</Card>
+		</div>
 	);
 };
 
