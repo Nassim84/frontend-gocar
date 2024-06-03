@@ -18,28 +18,31 @@ Gocar is a carpooling platform designed to make it easy for people to share ride
 
 ## 📂 Project Structure
 
+## Project Structure
+
 Here's a brief overview of the project's structure:
-Gocar-frontend/ 
-Gocar-frontend/
 
-├── public/ # Static assets
+```plaintext
+├── public/               # Static assets
+│
+├── src/                  # Source files
+│   ├── components/       # React components
+│   ├── config/           # Configuration files
+│   ├── contexts/         # Context providers
+│   ├── pages/            # Page components
+│   ├── services/         # Service utilities
+│   ├── styles/           # Styling files
+│   ├── App.tsx           # Main app component
+│   ├── main.tsx          # Entry point
+│   └── ...               # Other folders and files
+│
+├── .gitignore            # Git ignore file
+├── package.json          # Project metadata and dependencies
+├── tsconfig.json         # TypeScript configuration
+└── vite.config.ts        # Vite configuration
 
-├── src/ # Source files │ 
-    ├── components/ # React components │ 
-    ├── pages/ # Page components │ 
-    ├── styles/ # Styling files │
-    ├── App.tsx # Main app component │
-    ├── main.tsx # Entry point │ 
-    └── ... # Other folders and files
 
-├── .gitignore # Git ignore file
-
-├── package.json # Project metadata and dependencies
-
-├── tsconfig.json # TypeScript configuration
-
-└── vite.config.ts # Vite configuration
-
+```
 
 ## 🚀 Getting Started
 
