@@ -51,7 +51,6 @@ const Register: React.FC = () => {
 				role,
 				campus,
 			});
-			toast.success("Inscription réussie !");
 			navigate("/login");
 		} catch (error) {
 			if (axios.isAxiosError(error)) {

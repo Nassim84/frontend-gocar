@@ -21,6 +21,9 @@ import Register from "./pages/Register";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import TripsList from "./components/TripsList";
+import TripDetails from "./components/TripDetails";
+import CreateTrip from "./pages/CreateTrip";
 
 const AppRoutes: React.FC = () => {
 	const location = useLocation();
@@ -62,6 +65,36 @@ const AppRoutes: React.FC = () => {
 					<Route index element={<Management />} />
 					<Route path="vehicles/*" element={<Vehicles />} />
 				</Route>
+				<Route
+					path="/trips"
+					element={
+						<ProtectedRoute isAuthenticated={isAuthenticated}>
+							<MotionDiv>
+								<TripsList />
+							</MotionDiv>
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/trips/:id"
+					element={
+						<ProtectedRoute isAuthenticated={isAuthenticated}>
+							<MotionDiv>
+								<TripDetails />
+							</MotionDiv>
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/create-trip"
+					element={
+						<ProtectedRoute isAuthenticated={isAuthenticated}>
+							<MotionDiv>
+								<CreateTrip />
+							</MotionDiv>
+						</ProtectedRoute>
+					}
+				/>
 				<Route
 					path="/login"
 					element={

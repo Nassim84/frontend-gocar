@@ -63,10 +63,10 @@ const Management: React.FC = () => {
 			});
 			fetchUserProfile();
 			setShowUpdateModal(false);
-			toast.success("Profile updated successfully!");
+			toast.success("Profil mis à jour avec succès !");
 		} catch (error) {
 			console.error("Error updating profile:", error);
-			toast.error("Failed to update profile!");
+			toast.error("Échec de la mise à jour du profil !");
 		}
 	};
 
@@ -74,11 +74,11 @@ const Management: React.FC = () => {
 		try {
 			await axiosInstance.delete("/api/users/profile");
 			logout();
-			toast.success("Account deleted successfully!");
+			toast.success("Compte supprimé avec succès !");
 			navigate("/");
 		} catch (error) {
 			console.error("Error deleting account:", error);
-			toast.error("Failed to delete account!");
+			toast.error("Échec de la suppression du compte !");
 		}
 	};
 
