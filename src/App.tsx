@@ -17,7 +17,6 @@ import Vehicles from "./components/profile/Vehicles";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -64,6 +63,7 @@ const AppRoutes: React.FC = () => {
 				>
 					<Route index element={<Management />} />
 					<Route path="vehicles/*" element={<Vehicles />} />
+					<Route path="trips" element={<TripsList />} />
 				</Route>
 				<Route
 					path="/trips"
@@ -101,18 +101,6 @@ const AppRoutes: React.FC = () => {
 						!isAuthenticated ? (
 							<MotionDiv>
 								<Login />
-							</MotionDiv>
-						) : (
-							<Navigate to="/" replace />
-						)
-					}
-				/>
-				<Route
-					path="/register"
-					element={
-						!isAuthenticated ? (
-							<MotionDiv>
-								<Register />
 							</MotionDiv>
 						) : (
 							<Navigate to="/" replace />

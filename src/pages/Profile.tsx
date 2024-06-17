@@ -17,7 +17,7 @@ const Profile: React.FC = () => {
 					<Button
 						label="Management"
 						icon="pi pi-briefcase"
-						className="p-button-text p-button-plain w-full justify-start py-7 text-lg"
+						className="p-button-text p-button-plain w-full justify-start py-12 text-lg"
 					/>
 				</Link>
 				<Link
@@ -27,9 +27,21 @@ const Profile: React.FC = () => {
 					}`}
 				>
 					<Button
-						label="Vehicles"
+						label="Véhicules"
 						icon="pi pi-car"
-						className="p-button-text p-button-plain w-full justify-start py-7 text-lg"
+						className="p-button-text p-button-plain w-full justify-start py-12 text-lg"
+					/>
+				</Link>
+				<Link
+					to="trips"
+					className={`block ${
+						location.pathname === "/profile/trips" ? "active" : ""
+					}`}
+				>
+					<Button
+						label="Trajets"
+						icon="pi pi-map"
+						className="p-button-text p-button-plain w-full justify-start py-12 text-lg"
 					/>
 				</Link>
 			</nav>

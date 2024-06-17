@@ -45,14 +45,6 @@ const Header: React.FC = () => {
 										className="p-button-text p-button-rounded p-button-plain mr-2"
 									/>
 								</Link>
-
-								<Link to="/register">
-									<Button
-										label="Inscription"
-										icon="pi pi-user-plus"
-										className="p-button-rounded p-button-primary"
-									/>
-								</Link>
 							</>
 						)}
 					</div>
