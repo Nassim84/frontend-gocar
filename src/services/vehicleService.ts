@@ -3,7 +3,6 @@ import axios from "axios";
 const API_URL = "http://localhost:3000/api/vehicles";
 
 const getAuthToken = () => {
-	// Récupérez le jeton d'authentification depuis le stockage local ou les cookies
 	return localStorage.getItem("token");
 };
 

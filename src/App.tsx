@@ -15,7 +15,7 @@ import MotionDiv from "./components/MotionDiv";
 import Management from "./components/profile/Management";
 import Vehicles from "./components/profile/Vehicles";
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Profile from "./navigation/Profile";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -23,6 +23,7 @@ import NotFound from "./pages/NotFound";
 import TripsList from "./components/TripsList";
 import TripDetails from "./components/TripDetails";
 import CreateTrip from "./pages/CreateTrip";
+import UserTrips from "./navigation/UserTrips";
 
 const AppRoutes: React.FC = () => {
 	const location = useLocation();
@@ -63,7 +64,7 @@ const AppRoutes: React.FC = () => {
 				>
 					<Route index element={<Management />} />
 					<Route path="vehicles/*" element={<Vehicles />} />
-					<Route path="trips" element={<TripsList />} />
+					<Route path="trips" element={<UserTrips />} />
 				</Route>
 				<Route
 					path="/trips"
