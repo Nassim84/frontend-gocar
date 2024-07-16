@@ -1,6 +1,5 @@
 // UserTrips.tsx
 import React, { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
 import {
 	getUserTripsAsDriver,
 	getUserTripsAsPassenger,
@@ -12,6 +11,7 @@ import PassengerTrips from "../components/trips/PassengerTrips";
 const UserTrips: React.FC = () => {
 	const [driverTrips, setDriverTrips] = useState<Trip[]>([]);
 	const [passengerTrips, setPassengerTrips] = useState<Trip[]>([]);
+	const [activeTab, setActiveTab] = useState<"driver" | "passenger">("driver");
 
 	useEffect(() => {
 		const fetchTrips = async () => {
@@ -31,22 +31,32 @@ const UserTrips: React.FC = () => {
 		<div className="max-w-4xl mx-auto py-8">
 			<h2 className="text-3xl font-bold text-gray-800 mb-6">Mes Trajets</h2>
 			<div className="mb-6">
-				<Link
-					to="driver"
-					className="mr-4 py-2 px-4 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors"
+				<button
+					onClick={() => setActiveTab("driver")}
+					className={`mr-4 py-2 px-4 rounded-lg transition-colors ${
+						activeTab === "driver"
+							? "bg-blue-500 text-white"
+							: "bg-gray-200 hover:bg-gray-300"
+					}`}
 				>
 					Conducteur
-				</Link>
-				<Link
-					to="passenger"
-					className="py-2 px-4 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors"
+				</button>
+				<button
+					onClick={() => setActiveTab("passenger")}
+					className={`py-2 px-4 rounded-lg transition-colors ${
+						activeTab === "passenger"
+							? "bg-blue-500 text-white"
+							: "bg-gray-200 hover:bg-gray-300"
+					}`}
 				>
 					Passager
-				</Link>
+				</button>
 			</div>
-			<Outlet />
-			<DriverTrips driverTrips={driverTrips} />
-			<PassengerTrips passengerTrips={passengerTrips} />
+			{activeTab === "driver" ? (
+				<DriverTrips driverTrips={driverTrips} />
+			) : (
+				<PassengerTrips passengerTrips={passengerTrips} />
+			)}
 		</div>
 	);
 };

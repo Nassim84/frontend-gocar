@@ -56,9 +56,7 @@ const AppRoutes: React.FC = () => {
 					path="/profile"
 					element={
 						<ProtectedRoute isAuthenticated={isAuthenticated}>
-							<MotionDiv>
-								<Profile />
-							</MotionDiv>
+							<Profile />
 						</ProtectedRoute>
 					}
 				>
