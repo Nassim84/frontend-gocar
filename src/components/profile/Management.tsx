@@ -10,6 +10,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { ProgressSpinner } from "primereact/progressspinner";
 import { AuthContext } from "../../context/AuthContext";
+import ChangePassword from "./ChangePassword";
 
 interface User {
 	id: number;
@@ -32,6 +33,7 @@ const Management: React.FC = () => {
 	const [campus, setCampus] = useState("");
 	const [showUpdateModal, setShowUpdateModal] = useState(false);
 	const [showDeleteModal, setShowDeleteModal] = useState(false);
+	const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
 	const { logout } = useContext(AuthContext);
 	const navigate = useNavigate();
 
@@ -134,18 +136,32 @@ const Management: React.FC = () => {
 				</div>
 				<button
 					type="button"
-					className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md"
+					className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
 					onClick={() => setShowUpdateModal(true)}
 				>
 					Mettre à jour
 				</button>
 			</form>
-			<button
-				onClick={() => setShowDeleteModal(true)}
-				className="bg-red-500 text-white font-bold py-2 px-4 rounded-md mt-4"
-			>
-				Supprimer mon compte
-			</button>
+			<div className="mt-4 flex space-x-2">
+				<button
+					type="button"
+					className="bg-green-500 text-white font-bold py-2 px-4 rounded-md hover:bg-green-600 transition-colors"
+					onClick={() => setShowChangePasswordModal(true)}
+				>
+					Changer le mot de passe
+				</button>
+
+				<button
+					onClick={() => setShowDeleteModal(true)}
+					className="bg-red-500 text-white font-bold py-2 px-4 rounded-md hover:bg-red-600 transition-colors"
+				>
+					Supprimer mon compte
+				</button>
+			</div>
+			<ChangePassword
+				visible={showChangePasswordModal}
+				onHide={() => setShowChangePasswordModal(false)}
+			/>
 
 			<Dialog
 				header="Mise à jour du profil"
@@ -194,7 +210,7 @@ const Management: React.FC = () => {
 					</div>
 					<button
 						type="submit"
-						className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4"
+						className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-blue-600 transition-colors"
 					>
 						Enregistrer
 					</button>
@@ -212,13 +228,13 @@ const Management: React.FC = () => {
 				<div className="flex justify-end space-x-2 mt-4">
 					<button
 						onClick={handleDeleteAccount}
-						className="bg-red-500 text-white font-bold py-2 px-4 rounded-md"
+						className="bg-red-500 text-white font-bold py-2 px-4 rounded-md hover:bg-red-600 transition-colors"
 					>
 						Oui, supprimer
 					</button>
 					<button
 						onClick={() => setShowDeleteModal(false)}
-						className="bg-gray-500 text-white font-bold py-2 px-4 rounded-md"
+						className="bg-gray-300 text-black font-bold py-2 px-4 rounded-md hover:bg-gray-400 transition-colors"
 					>
 						Annuler
 					</button>
