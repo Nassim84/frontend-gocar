@@ -21,7 +21,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 	useEffect(() => {
-		// Vérifiez le jeton dans le localStorage lors du montage du composant
 		const token = localStorage.getItem("token");
 		if (token) {
 			setIsAuthenticated(true);
@@ -29,14 +28,21 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 	}, []);
 
 	const login = (token: string) => {
-		// Stockez le jeton dans le localStorage ou un autre stockage sécurisé
 		localStorage.setItem("token", token);
 		setIsAuthenticated(true);
 	};
 
 	const logout = () => {
-		// Supprimez le jeton du localStorage ou d'un autre stockage sécurisé
 		localStorage.removeItem("token");
+
+		if ("caches" in window) {
+			caches.keys().then((names) => {
+				names.forEach((name) => {
+					caches.delete(name);
+				});
+			});
+		}
+
 		setIsAuthenticated(false);
 	};
 

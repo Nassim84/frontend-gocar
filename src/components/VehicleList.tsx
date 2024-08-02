@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// VehicleList.tsx
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
@@ -11,8 +12,10 @@ import {
 } from "../services/vehicleService";
 import VehicleForm from "./VehicleForm";
 import NoVehiclesMessage from "./NoVehiclesMessage";
+import { AuthContext } from "../context/AuthContext";
 
 const VehicleList: React.FC = () => {
+	const { isAuthenticated } = useContext(AuthContext);
 	const [vehicles, setVehicles] = useState<Vehicle[]>([]);
 	const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | undefined>(
 		undefined
@@ -24,12 +27,16 @@ const VehicleList: React.FC = () => {
 	);
 
 	useEffect(() => {
-		const fetchVehicles = async () => {
-			const data = await getUserVehicles();
-			setVehicles(data);
-		};
-		fetchVehicles();
-	}, []);
+		if (isAuthenticated) {
+			const fetchVehicles = async () => {
+				const data = await getUserVehicles();
+				setVehicles(data);
+			};
+			fetchVehicles();
+		} else {
+			setVehicles([]);
+		}
+	}, [isAuthenticated]);
 
 	const handleDelete = (vehicle: Vehicle) => {
 		setVehicleToDelete(vehicle);
