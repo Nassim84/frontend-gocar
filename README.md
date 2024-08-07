@@ -82,10 +82,9 @@ npm run dev
   ```
 or
 ```
-  ```sh
 yarn dev
   ```
-The app will be available at http://localhost:3000.
+The app will be available at http://localhost:5173.
 
 📦 Building for Production
 To create a production build, run:
@@ -112,8 +111,8 @@ Open a Pull Request
 Distributed under the MIT License. See LICENSE for more information.
 
 📧 Contact
-Your Name - your-email@example.com
+Your Name - nassim.belalia@etu.univ-amu.fr
 
-Project Link: https://github.com/your-username/Gocar-frontend
+Project Link: [https://github.com/your-username/Gocar-frontend](https://github.com/Nassim84/frontend-gocar)
 
 Thank you for checking out Gocar! Happy coding! 🚀
