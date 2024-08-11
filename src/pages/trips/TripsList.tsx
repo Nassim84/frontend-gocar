@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllTrips, Trip } from "../services/tripService";
+import { getAllTrips, Trip } from "../../services/tripService";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,7 +16,14 @@ const TripsList: React.FC = () => {
 		const fetchTrips = async () => {
 			try {
 				const response = await getAllTrips(currentPage, tripsPerPage);
-				setTrips(response.trips);
+				const currentDate = new Date();
+
+				// Filtrer les trajets pour ne garder que ceux dont la date est future
+				const upcomingTrips = response.trips.filter(
+					(trip: Trip) => new Date(trip.departureDateTime) > currentDate
+				);
+
+				setTrips(upcomingTrips);
 				setTotalPages(response.totalPages);
 				setCurrentPage(response.currentPage);
 			} catch (error) {

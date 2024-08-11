@@ -20,9 +20,9 @@ import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import TripsList from "./components/TripsList";
-import TripDetails from "./components/TripDetails";
-import CreateTrip from "./pages/CreateTrip";
+import TripsList from "./pages/trips/TripsList";
+import TripDetails from "./pages/trips/TripDetails";
+import CreateTrip from "./pages/trips/CreateTrip";
 import UserTrips from "./navigation/UserTrips";
 
 const AppRoutes: React.FC = () => {

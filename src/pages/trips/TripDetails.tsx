@@ -6,7 +6,7 @@ import {
 	joinTrip,
 	leaveTrip,
 	Trip,
-} from "../services/tripService";
+} from "../../services/tripService";
 
 const TripDetails: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
