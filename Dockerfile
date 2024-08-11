@@ -10,14 +10,11 @@ COPY package.json package-lock.json ./
 # Installe les dépendances
 RUN npm install
 
-# Copie les sources de l'application
+# Copie les sources de l'application (sera remplacé par le volume pendant le développement)
 COPY . .
-
-# Construit l'application pour la production
-RUN npm run build
 
 # Expose le port 5173 pour accéder à l'application
 EXPOSE 5173
 
-# Commande pour démarrer l'application en mode preview
+# Commande pour démarrer l'application en mode développement
 CMD ["npm", "run", "dev"]
