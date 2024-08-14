@@ -14,10 +14,7 @@ const Login: React.FC = () => {
 	const handleLogin = async (e: React.FormEvent) => {
 		e.preventDefault();
 		try {
-			const response = await axios.post(
-				"https://backendgocar-production-c627.up.railway.app/api/auth/login",
-				{ email, password }
-			);
+			const response = await axios.post("/api/auth/login", { email, password });
 			login(response.data.token);
 			navigate("/profile");
 		} catch (error) {
