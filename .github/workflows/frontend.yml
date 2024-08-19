@@ -1,0 +1,39 @@
+# frontend-gocar/.github/workflows/frontend.yml
+
+name: CI Frontend
+
+on:
+  push:
+    branches:
+      - main # Déclenche le workflow sur les commits vers la branche main
+  pull_request:
+    branches:
+      - main # Déclenche le workflow sur les pull requests vers la branche main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # Chemin vers le répertoire frontend-gocar
+          path: frontend-gocar
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20" # Utilise la version 20 de Node.js
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: frontend-gocar # Assurez-vous de définir le bon répertoire
+
+      - name: Run tests
+        run: npm test
+        working-directory: frontend-gocar # Assurez-vous de définir le bon répertoire
+
+      - name: Build
+        run: npm run build
+        working-directory: frontend-gocar # Assurez-vous de définir le bon répertoire
